@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>solving fizz buzz</title>
+</head>
+<body>
+    <script>
+        let userInput = parseInt(prompt("Write a number ",));
+        while (Number.isNaN(userInput)) {
+            userInput = parseInt(prompt("Please enter a number ",));
+        }
+        let currentIteration = 1;
+        while (currentIteration < userInput + 1) {
+            if (numberIsDivisibleByThree(currentIteration)) {
+                if (numberIsDivisibleByFive(currentIteration)) {
+                    console.log("FizzBuzz");
+                } else {
+                    console.log("Fizz");
+                }
+            } else if (numberIsDivisibleByFive(currentIteration)){
+                console.log("Buzz");
+            } else {
+                console.log(currentIteration);
+            }
+
+
+            currentIteration += 1;
+        }
+
+        function numberIsDivisibleByThree(number) {
+            return number % 3 === 0 ? true : false;
+        }
+
+        function numberIsDivisibleByFive(number) {
+            return number % 5 === 0 ? true : false;
+        }
+    </script>
+</body>
+</html>
