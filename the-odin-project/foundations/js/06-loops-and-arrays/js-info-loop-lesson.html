@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js info loops</title>
+</head>
+<body>
+    <script>
+        for (let i = 2; i < 11; i++) {
+            console.log(i);
+        }
+        let i = 0;
+        while (i < 3) {
+            console.log( `number ${i}!` );
+            i++;
+        }
+
+        function findPrimesUntilNumber(number) {
+            outer: for (let i = 2; i < number + 1; i++) {
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        continue outer 
+                    }
+                }
+                console.log(i + " is prime.")
+            }
+        }
+
+        findPrimesUntilNumber(1200);
+    </script>
+</body>
+</html>
